@@ -15,8 +15,8 @@ class PostsTableSeeder extends Seeder
     {
         for ($i = 0; $i < 10; $i++) {
             $new_post_object = new Post();
-            $new_post_object->title = $faker->sentence(2);
-            $new_post_object->summary = $faker->sentence(2);
+            $new_post_object->title = $faker->sentence(1);
+            $new_post_object->summary = $faker->sentence(1);
             $new_post_object->body = $faker->sentence(10);
             $new_post_object->save();
         }
