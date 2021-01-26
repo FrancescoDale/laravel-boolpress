@@ -19,6 +19,8 @@ class PostsTableSeeder extends Seeder
             $new_post_object->body = $faker->sentence(10);
             //generazione slug
             $slug->slug = Str::slug($new_post_object->title);
+            // controlli univocità slug ( se presente )
+            $post_object_presente = Post::where('slug', $slug)->first();
 
             $new_post_object->slug = $slug;
             $new_post_object->save();
