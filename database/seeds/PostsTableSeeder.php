@@ -19,9 +19,21 @@ class PostsTableSeeder extends Seeder
             $new_post_object->body = $faker->sentence(10);
             //generazione slug
             $slug->slug = Str::slug($new_post_object->title);
+            //assegno il valore di slug ad una variabile che poi verrà sovrascritta
+            $slug_base = $slug;
             // controlli univocità slug ( se presente )
             $post_object_presente = Post::where('slug', $slug)->first();
+            //contatore
+            $cont = 1;
+            // ciclo che si avvia quando $post_object_presente esiste
+            while ($post_object_presente) {
+                // generazione nuovo slag con numero del contatore finale
+                $slug = $slug_base . '-' . $cont;
+                $cont++;
+                $post_object_presente = Post::where('slug', $slug)->first();
+            }
 
+            // quando lo slug non è presente nel database, ne assegna il valore al campo slug
             $new_post_object->slug = $slug;
             $new_post_object->save();
         }
