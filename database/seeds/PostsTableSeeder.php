@@ -15,10 +15,10 @@ class PostsTableSeeder extends Seeder
     {
         for ($i = 0; $i < 10; $i++) {
             $new_post_object = new Post();
-            $new_post_object->title = $faker->sentence(1);
-            $new_post_object->body = $faker->sentence(10);
+            $new_post_object->title = $faker->sentence(2);
+            $new_post_object->body = $faker->text(250);
             //generazione slug
-            $slug->slug = Str::slug($new_post_object->title);
+            $slug = Str::slug($new_post_object->title);
             //assegno il valore di slug ad una variabile che poi verrà sovrascritta
             $slug_base = $slug;
             // controlli univocità slug ( se presente )
