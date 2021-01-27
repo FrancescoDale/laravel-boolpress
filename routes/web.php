@@ -14,6 +14,7 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', 'HomeController@index')->name('index');
+Route::get('/contatti', 'HomeController@contatti')->name('contatti');
 
 Auth::routes(['register' => false]);
 
