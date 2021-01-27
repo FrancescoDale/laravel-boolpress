@@ -4,6 +4,7 @@
     <div class="container">
         <div class="row justify-content-center">
             <div class="col-12">
+                <h1 class="text-capitalize text-center">elenco posts</h1>
                 <table class="table">
                     <thead>
                         <tr class="text-capitalize">
