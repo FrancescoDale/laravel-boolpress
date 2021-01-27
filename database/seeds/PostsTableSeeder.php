@@ -27,7 +27,7 @@ class PostsTableSeeder extends Seeder
             $cont = 1;
             // ciclo che si avvia quando $post_object_presente esiste
             while ($post_object_presente) {
-                // generazione nuovo slag con numero del contatore finale
+                // generazione nuovo slug con numero del contatore finale
                 $slug = $slug_base . '-' . $cont;
                 $cont++;
                 $post_object_presente = Post::where('slug', $slug)->first();
