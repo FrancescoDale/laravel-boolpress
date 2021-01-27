@@ -11,8 +11,6 @@
                             <td>id</td>
                             <td>title</td>
                             <td>slug</td>
-                            <td>body</td>
-                            <td>azioni</td>
                         </tr>
                     </thead>
                     <tbody>
@@ -22,8 +20,11 @@
                                 <td>{{ $post->slug}}</td>
                                 <td>{{ $post->body}}</td>
                                 <td>
-                                    <a class="btn btn-info text-capitalize" href="#">dettagli</a>
+                                    <a class="btn btn-info text-capitalize" href="{{ route('admin.posts.show', ['post' => $post->id ]) }}">dettagli</a>
                                 </td>
+                                <td>
+                                    <a class="btn btn-info text-capitalize" href="{{ route('admin.posts.edit', ['post' => $post->id]) }}">modifica</a>
+                                </td>                                
                             </tr>
                         @endforeach
                     </tbody>
@@ -31,7 +32,8 @@
             </div>
 
         </div>
-
+        <div class="mt-4">
+            <a href="{{ route('admin.posts.create') }}" class="text-capitalize btn btn-primary">inserisci post</a>
+        </div>
     </div>
-
 @endsection
