@@ -40,7 +40,29 @@ class PostController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $form_data = $request->all();
+        $new_post = new Post();
+        $new_post->fill($form_data);
+        // generazione slug
+        $slug = Str::slug($new_post->title);
+        //variabile che prende il valore dello slug e viene poi sovrascritta
+        $slug_base = $slug;
+        // verifica univocità dello slug
+        $post_object_presente = Post::where('slug', $slug)->first();
+        //cont
+        $cont = 1;
+        // se lo slug è presente parte il ciclo while
+        while($post_object_presente) {
+            // nuovo slug con contatore alla fine
+            $slug = $slug_base . '-' . $cont;
+            $cont++;
+            $post_object_presente = Post::where('slug', $slug)->first();
+        }
+
+        // assegnazione slug al nuovo post
+        $new_post->slug = $slug;
+        $new_post->save();
+        return redirect()->route('admin.posts.index');
     }
 
     /**

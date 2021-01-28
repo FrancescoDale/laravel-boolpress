@@ -11,11 +11,13 @@
                             <td>id</td>
                             <td>title</td>
                             <td>slug</td>
+                            <td>body</td>
                         </tr>
                     </thead>
                     <tbody>
                         @foreach ($posts as $post)
                             <tr>
+                                <td>{{ $post->id}}</td>
                                 <td>{{ $post->title}}</td>
                                 <td>{{ $post->slug}}</td>
                                 <td>{{ $post->body}}</td>
