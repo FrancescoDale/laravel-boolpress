@@ -14,4 +14,14 @@ class PostController extends Controller
         ];
         return view('guest.posts.index', $data);
     }
+
+    public function show(Post $post)
+    {
+        if(!$post) {
+            abort(404);
+        }
+        //array
+        $data = ['post' => $post];
+        return view('guest.posts.show', $data);
+    }
 }
