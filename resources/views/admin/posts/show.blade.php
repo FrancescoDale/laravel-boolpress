@@ -16,7 +16,7 @@
                 <dt>Slug</dt>
                 <dd>{{ $post->slug }}</dd>
                 <dt>Contenuto</dt>
-                <dd>{{ $post->content }}</dd>
+                <dd>{{ $post->body }}</dd>
             </dl>
             <a href="{{ route('admin.posts.edit', ['post' => $post->id]) }}"
                 class="btn btn-warning">
