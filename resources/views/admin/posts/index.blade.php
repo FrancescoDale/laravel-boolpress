@@ -24,7 +24,14 @@
                                 </td>
                                 <td>
                                     <a class="btn btn-info text-capitalize" href="{{ route('admin.posts.edit', ['post' => $post->id]) }}">modifica</a>
-                                </td>                                
+                                </td>
+                                <td>
+                                    <form class="d-inline-block" action="{{ route('admin.posts.destroy', ['post' => $post->id]) }}" method="post">
+                                        @csrf
+                                        @method('DELETE')
+                                        <button type="submit" class="btn btn-primary text-capitalize"> elimina </button>
+                                    </form>
+                                </td>
                             </tr>
                         @endforeach
                     </tbody>
