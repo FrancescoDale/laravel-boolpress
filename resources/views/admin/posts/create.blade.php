@@ -22,10 +22,10 @@
                 </div>
                 <div class="form-group">
                     <label>Categoria</label>
-                    <select class="form-control" name="">
+                    <select class="form-control" name="category_id">
                         <option value="">-seleziona categoria-</option>
                         @foreach ($categories as $category)
-                            <option value="{{ $category }}"> {{ $category->name }} </option>
+                            <option value="{{ $category->id }}"> {{ $category->name }} </option>
 
                         @endforeach
 
