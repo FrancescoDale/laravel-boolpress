@@ -18,7 +18,8 @@
                 <dt>Contenuto</dt>
                 <dd>{{ $post->body }}</dd>
                 <dt>Categoria</dt>
-                <dd>{{ $post->category->name }}</dd>
+                {{-- verifica se c'è la categoria e gestione del caso in cui non ci fosse --}}
+                <dd>{{ $post->category ? $post->category->name : '-' }}</dd>
             </dl>
             <a href="{{ route('admin.posts.edit', ['post' => $post->id]) }}"
                 class="btn btn-warning">
