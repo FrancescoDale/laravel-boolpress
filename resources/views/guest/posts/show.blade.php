@@ -9,7 +9,7 @@
                     {{ $post->body }}
                 </div>
                 <div class="mt-3">
-                    <p>categoria : {{ $post->category }}</p>
+                    <p>categoria : {{ $post->category->name }}</p>
                 </div>
             </div>
         </div>
