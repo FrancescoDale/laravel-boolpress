@@ -39,7 +39,7 @@
                     <p>Seleziona i tags :</p>
                     @foreach ($tags as $tag)
                         <div class="form-check">
-                            <input name="tags[]" class="form-check-input" type="checkbox" value="{{ $tag->id }}">
+                            <input name="tags[]" class="form-check-input" type="checkbox" value="{{ $tag->id }}"  {{ $post->tags->contains($tag) ? 'checked=checked' : '' }}>
                             <label class="form-check-label">
                                 {{ $tag->name }}
                             </label>

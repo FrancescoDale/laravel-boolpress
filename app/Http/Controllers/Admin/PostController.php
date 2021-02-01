@@ -70,7 +70,7 @@ class PostController extends Controller
         $new_post->save();
 
         //sincronizzazione dei $tags
-         $new_post->tags()->sync($form_data['tags']);
+        $new_post->tags()->sync($form_data['tags']);
 
         return redirect()->route('admin.posts.index');
     }
