@@ -15,6 +15,6 @@ class CategoryController extends Controller
         $data = [
             'category' => $category
         ];
-        return view('categories.show', $data);
+        return view('guest.categories.show', $data);
     }
 }
