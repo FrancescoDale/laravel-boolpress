@@ -20,10 +20,13 @@
 
                     </p>
                     <p>Tag :
-                        @foreach ($post->tags as $tag)
+                        @forelse ($post->tags as $tag)
 
                             {{ $tag->name }}{{ !$loop->last ? ',' : '.' }}
-                        @endforeach
+
+                        @empty
+                            ---
+                        @endforelse
 
                     </p>
                 </div>
