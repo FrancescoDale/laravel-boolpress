@@ -20,6 +20,17 @@
                 <dt>Categoria</dt>
                 {{-- verifica se c'è la categoria e gestione del caso in cui non ci fosse --}}
                 <dd>{{ $post->category ? $post->category->name : '-' }}</dd>
+                <dt>Tag</dt>
+                {{-- verifica se c'è il tag e gestione del caso in cui non ci fosse --}}
+                <dd>
+                    @forelse ($post->tags as $tag)
+
+                        {{ $tag->name }}{{ !$loop->last ? ',' : '.' }}
+
+                    @empty
+                        ---
+                    @endforelse    
+                </dd>
             </dl>
             <a href="{{ route('admin.posts.edit', ['post' => $post->id]) }}"
                 class="btn btn-warning">
