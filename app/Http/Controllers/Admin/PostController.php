@@ -68,6 +68,10 @@ class PostController extends Controller
         // assegnazione slug al nuovo post
         $new_post->slug = $slug;
         $new_post->save();
+
+        //sincronizzazione dei $tags
+         $new_post->tags()->sync($form_data['tags']);
+
         return redirect()->route('admin.posts.index');
     }
 

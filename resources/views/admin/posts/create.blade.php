@@ -32,7 +32,7 @@
                     </select>
                 </div>
                 <div class="form-group">
-                    <p>seleziona i tags :</p>
+                    <p>Seleziona i tags :</p>
                     @foreach ($tags as $tag)
                         <div class="form-check">
                             <input name="tags[]" class="form-check-input" type="checkbox" value="{{ $tag->id }}">
