@@ -9,7 +9,16 @@
                     {{ $post->body }}
                 </div>
                 <div class="mt-3">
-                    <p>categoria : {{ $post->category ? $post->category->name : '-' }} </p>
+                    <p>categoria :
+                        @if ($post->category)
+                            <a href="{{ route('categories.show', ['slug' => $post->category->slug ]) }}">
+                                {{ $post->category->name }}
+                            </a>
+                        @else
+                            ---
+                        @endif
+
+                    </p>
                 </div>
             </div>
         </div>
