@@ -8,7 +8,9 @@
                 <ol>
                     @foreach ($category->posts as $post)
                         <li>
-                            {{ $post->title }}
+                            <a href="{{ route('posts.show', ['post' => $post->slug])}}">
+                                {{ $post->title }}
+                            </a>
                         </li>
                     @endforeach
                 </ol>
