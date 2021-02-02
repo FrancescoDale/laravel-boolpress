@@ -135,6 +135,11 @@ return [
         ],
     ],
 
+    'title' => [
+            'required' => 'er titolo lo devi mette',
+            'max' => 'troppo lungo'
+        ]
+
     /*
     |--------------------------------------------------------------------------
     | Custom Validation Attributes
